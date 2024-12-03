@@ -117,16 +117,10 @@
       }
     }
     .bio-image {
-      background: var(--accent1);
       border-radius: 100%;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-
-      @media (max-width: 1400px) {
-        width: 120px;
-        height: 120px;
-      }
     }
   }
 }
@@ -251,6 +245,7 @@
   }
   @media (max-width: 768px) {
     padding: 32px 51px 55px 32px;
+    display: none;
   }
 
   &__title-sub-text {
@@ -804,6 +799,10 @@
 
     @media (max-width: 768px) {
       gap: 24px;
+        /* overflow: visible; */
+        /* flex-direction: column; */
+        flex-flow: wrap;
+        justify-content: center;
     }
 
     &-item {

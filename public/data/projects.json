@@ -1,0 +1,231 @@
+[
+  {
+    "id": "project-1",
+    "title": "Aroha Agency Website",
+    "description": "A 12-month inquiry into Italian design, history, and culture.",
+    "image": "/image/all-project-11.png",
+    "width": 636,
+    "height": 320,
+    "details": {
+      "bannerImage": "/images/project-banner-1.png",
+      "challenge": {
+        "title": "The Challenge",
+        "text": "Explore our portfolio projects and witness the artistry of Aroha Agency. Each endeavor a testament to our commitment, showcasing innovative design, strategic marketing.",
+        "list": [
+          "Expert advice and guidance to elevate your digital strategy.",
+          "Crafting visually stunning user-friendly websites for your brand.",
+          "Building and maintaining presence on social platforms."
+        ]
+      },
+      "solution": {
+        "title": "The Solution",
+        "text": "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.",
+        "list": [
+          "One who avoids a pain that produces no resultant pleasure.",
+          "Laborious physical exercise.",
+          "One who avoids a pain that produces no resultant."
+        ]
+      },
+      "result": {
+        "title": "Project Result",
+        "text": "Because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.",
+        "list": [
+          "Creating customized and user-friendly mobile applications.",
+          "Enhancing your website's visibility and search engine ranking.",
+          "Online stores for seamless transactions."
+        ]
+      }
+    }
+  },
+  
+  {
+    "id": "project-2",
+    "title": "Project 2",
+    "description": "An innovative approach to modern website design.",
+    "image": "/image/all-project-11.png",
+    "width": 636,
+    "height": 320,
+    "details": {
+      "bannerImage": "/images/project-banner-1.png",
+      "challenge": {
+        "title": "The Challenge",
+        "text": "Tackling complex design requirements to meet user demands.",
+        "list": [
+          "Identify client needs and expectations.",
+          "Create a design blueprint for the website.",
+          "Ensure responsiveness across devices."
+        ]
+      },
+      "solution": {
+        "title": "The Solution",
+        "text": "Integrated modern design principles to build a robust solution.",
+        "list": [
+          "Used a mobile-first design approach.",
+          "Implemented dynamic user interactions.",
+          "Incorporated SEO best practices."
+        ]
+      },
+      "result": {
+        "title": "Project Result",
+        "text": "Delivered a stunning and functional website, exceeding client expectations.",
+        "list": [
+          "Improved client satisfaction by 30%.",
+          "Boosted site traffic with engaging visuals.",
+          "Enhanced online user engagement."
+        ]
+      }
+    }
+  },
+  {
+    "id": "project-3",
+    "title": "Project 3",
+    "description": "A groundbreaking mobile app redesign project.",
+    "image": "/image/all-project-13.png",
+    "width": 636,
+    "height": 664,
+    "details": {
+      "bannerImage": "/images/project-banner-1.png",
+      "challenge": {
+        "title": "The Challenge",
+        "text": "Redesigning an existing app to meet modern usability standards.",
+        "list": [
+          "Conduct user interviews to identify pain points.",
+          "Analyze app performance metrics.",
+          "Create a modern and user-friendly interface."
+        ]
+      },
+      "solution": {
+        "title": "The Solution",
+        "text": "Developed an intuitive app interface that delights users.",
+        "list": [
+          "Used user feedback to drive design choices.",
+          "Streamlined navigation for efficiency.",
+          "Enhanced app aesthetics and usability."
+        ]
+      },
+      "result": {
+        "title": "Project Result",
+        "text": "Achieved record-high user retention and positive reviews.",
+        "list": [
+          "Increased app downloads by 40%.",
+          "Reduced user churn with better onboarding.",
+          "Garnered excellent feedback in app reviews."
+        ]
+      }
+    }
+  },
+  {
+    "id": "project-4",
+    "title": "Project 3",
+    "description": "A groundbreaking mobile app redesign project.",
+    "image": "/image/all-project-13.png",
+    "width": 636,
+    "height": 664,
+    "details": {
+      "bannerImage": "/images/project-banner-3.png",
+      "challenge": {
+        "title": "The Challenge",
+        "text": "Redesigning an existing app to meet modern usability standards.",
+        "list": [
+          "Conduct user interviews to identify pain points.",
+          "Analyze app performance metrics.",
+          "Create a modern and user-friendly interface."
+        ]
+      },
+      "solution": {
+        "title": "The Solution",
+        "text": "Developed an intuitive app interface that delights users.",
+        "list": [
+          "Used user feedback to drive design choices.",
+          "Streamlined navigation for efficiency.",
+          "Enhanced app aesthetics and usability."
+        ]
+      },
+      "result": {
+        "title": "Project Result",
+        "text": "Achieved record-high user retention and positive reviews.",
+        "list": [
+          "Increased app downloads by 40%.",
+          "Reduced user churn with better onboarding.",
+          "Garnered excellent feedback in app reviews."
+        ]
+      }
+    }
+  },
+  {
+    "id": "project-5",
+    "title": "Project 3",
+    "description": "A groundbreaking mobile app redesign project.",
+    "image": "/image/all-project-13.png",
+    "width": 636,
+    "height": 664,
+    "details": {
+      "bannerImage": "/images/project-banner-3.png",
+      "challenge": {
+        "title": "The Challenge",
+        "text": "Redesigning an existing app to meet modern usability standards.",
+        "list": [
+          "Conduct user interviews to identify pain points.",
+          "Analyze app performance metrics.",
+          "Create a modern and user-friendly interface."
+        ]
+      },
+      "solution": {
+        "title": "The Solution",
+        "text": "Developed an intuitive app interface that delights users.",
+        "list": [
+          "Used user feedback to drive design choices.",
+          "Streamlined navigation for efficiency.",
+          "Enhanced app aesthetics and usability."
+        ]
+      },
+      "result": {
+        "title": "Project Result",
+        "text": "Achieved record-high user retention and positive reviews.",
+        "list": [
+          "Increased app downloads by 40%.",
+          "Reduced user churn with better onboarding.",
+          "Garnered excellent feedback in app reviews."
+        ]
+      }
+    }
+  },
+  {
+    "id": "project-6",
+    "title": "Project 3",
+    "description": "A groundbreaking mobile app redesign project.",
+    "image": "/image/all-project-13.png",
+    "width": 636,
+    "height": 664,
+    "details": {
+      "bannerImage": "/images/project-banner-3.png",
+      "challenge": {
+        "title": "The Challenge",
+        "text": "Redesigning an existing app to meet modern usability standards.",
+        "list": [
+          "Conduct user interviews to identify pain points.",
+          "Analyze app performance metrics.",
+          "Create a modern and user-friendly interface."
+        ]
+      },
+      "solution": {
+        "title": "The Solution",
+        "text": "Developed an intuitive app interface that delights users.",
+        "list": [
+          "Used user feedback to drive design choices.",
+          "Streamlined navigation for efficiency.",
+          "Enhanced app aesthetics and usability."
+        ]
+      },
+      "result": {
+        "title": "Project Result",
+        "text": "Achieved record-high user retention and positive reviews.",
+        "list": [
+          "Increased app downloads by 40%.",
+          "Reduced user churn with better onboarding.",
+          "Garnered excellent feedback in app reviews."
+        ]
+      }
+    }
+  }
+]

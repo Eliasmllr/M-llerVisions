@@ -34,7 +34,7 @@ const LandingOneBody = () => {
                       <TitleCard />
                     </CardMotionOne>
                   </div>
-                  <div className="col-sm-6 col-12">
+                  <div className="col-sm-12 col-12 col-lg-6">
                     <CardMotionOne>
                       <ProfileCard />
                     </CardMotionOne>

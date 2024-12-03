@@ -21,7 +21,6 @@ dl {
   margin-top: 0;
   margin-bottom: 0rem;
 }
-
 input:focus {
   outline: 1px solid var(--black-neutral2) !important;
 }
@@ -265,6 +264,7 @@ span {
 
 // back to home button style
 .button-back-to-home {
+  margin-bottom: 40px;
   padding: 12px 20px;
   background: var(--secondary-color);
   border-radius: 8px;
@@ -280,5 +280,15 @@ span {
   &:hover {
     scale: 1.02;
     color: var(--white-neutral1);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .datenschutz-content{
+    text-align: center;
+  }
+  .impressum-content{
+    text-align: center;
   }
 }
