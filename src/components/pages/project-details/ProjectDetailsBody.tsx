@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import ProjectDetailsItem from "./ProjectDetailsItem";
 import ProjectBanner from './ProjectBanner';
@@ -10,19 +10,19 @@ type ProjectDetailsBodyProps = {
         title: string;
         text: string;
         list: string[];
-        image: string;
+        image?: StaticImageData;
       };
       solution: {
         title: string;
         text: string;
         list: string[];
-        image: string;
+        image?: StaticImageData;
       };
       result: {
         title: string;
         text: string;
         list: string[];
-        image: string;
+        image?: StaticImageData;
       };
     };
   };
@@ -35,7 +35,6 @@ const ProjectDetailsBody = ({ project }: ProjectDetailsBodyProps) => {
     <div className="mt-xxl-10 mt-xl-8 mt-6 position-relative z-2">
       <div className="card-style-two project-details p-32px">
         {/* Challenge Section */}
-        <ProjectBanner />
         <ProjectDetailsItem
           image={details.challenge.image}
           listContent={details.challenge.list}
