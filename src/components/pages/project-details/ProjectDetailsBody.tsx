@@ -31,12 +31,14 @@ type ProjectDetailsBodyProps = {
 const ProjectDetailsBody = ({ project }: ProjectDetailsBodyProps) => {
   const { details } = project;
 
+  const defaultImage: StaticImageData = "/path/to/default/image.jpg"; // Provide a default image path
+
   return (
     <div className="mt-xxl-10 mt-xl-8 mt-6 position-relative z-2">
       <div className="card-style-two project-details p-32px">
         {/* Challenge Section */}
         <ProjectDetailsItem
-          image={details.challenge.image}
+          image={details.challenge.image || defaultImage} // Use default image if undefined
           listContent={details.challenge.list}
           title={details.challenge.title}
           text={details.challenge.text}
@@ -44,7 +46,7 @@ const ProjectDetailsBody = ({ project }: ProjectDetailsBodyProps) => {
 
         {/* Solution Section */}
         <ProjectDetailsItem
-          image={details.solution.image}
+          image={details.solution.image || defaultImage} // Use default image if undefined
           listContent={details.solution.list}
           flexDirection="flex-row-reverse"
           title={details.solution.title}
@@ -53,7 +55,7 @@ const ProjectDetailsBody = ({ project }: ProjectDetailsBodyProps) => {
 
         {/* Result Section */}
         <ProjectDetailsItem
-          image={details.result.image}
+          image={details.result.image || defaultImage} // Use default image if undefined
           listContent={details.result.list}
           title={details.result.title}
           text={details.result.text}
