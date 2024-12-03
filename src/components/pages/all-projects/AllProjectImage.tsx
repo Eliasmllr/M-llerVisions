@@ -10,9 +10,10 @@ type Props = {
   hight: number;
   title?: string;
   text?: string;
+  id?: string;
 };
 
-const AllProjectImage = ({ image, hight, width, title, text }: Props) => {
+const AllProjectImage = ({ image, hight, width, title, text, id }: Props) => {
   return (
     <motion.div
       initial={{ borderRadius: 20, opacity: 0, y: -50, scale: 0.5 }}
@@ -28,23 +29,13 @@ const AllProjectImage = ({ image, hight, width, title, text }: Props) => {
         alt="All Projects image 11"
         className="image-body__image img-fluid"
       />
-      <Link href={`/project-details`} className="all-project-link">
+      <Link href={`/project-details/${id}`} className="all-project-link">
         <span className="all-project-link__text-area">
-          <span className="link-title heading-2">Aroha agency website</span>
-          <span className="textL link-text">
-            An 12 month long inquiry into italine design,history and culture.
-          </span>
-        </span>
-        <span className="all-project-link__image">
-          <Image
-            src={linkImage}
-            width={175}
-            height={100}
-            alt="All Project Link image"
-            className="img-fluid"
-          />
+          <span className="link-title heading-2">{title}</span>
+          <span className="textL link-text">{text}</span>
         </span>
       </Link>
+
     </motion.div>
   );
 };
