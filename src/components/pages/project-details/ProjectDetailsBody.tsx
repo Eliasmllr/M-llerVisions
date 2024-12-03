@@ -2,6 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import ProjectDetailsItem from "./ProjectDetailsItem";
 import ProjectBanner from './ProjectBanner';
+import defaultImage from '../../../../public/image/all-project-11.png';  // Import the default image
 
 type ProjectDetailsBodyProps = {
   project: {
@@ -31,14 +32,12 @@ type ProjectDetailsBodyProps = {
 const ProjectDetailsBody = ({ project }: ProjectDetailsBodyProps) => {
   const { details } = project;
 
-  const defaultImage: StaticImageData = "/path/to/default/image.jpg"; // Provide a default image path
-
   return (
     <div className="mt-xxl-10 mt-xl-8 mt-6 position-relative z-2">
       <div className="card-style-two project-details p-32px">
         {/* Challenge Section */}
         <ProjectDetailsItem
-          image={details.challenge.image || defaultImage} // Use default image if undefined
+          image={details.challenge.image || defaultImage}  // Use the imported default image
           listContent={details.challenge.list}
           title={details.challenge.title}
           text={details.challenge.text}
@@ -46,7 +45,7 @@ const ProjectDetailsBody = ({ project }: ProjectDetailsBodyProps) => {
 
         {/* Solution Section */}
         <ProjectDetailsItem
-          image={details.solution.image || defaultImage} // Use default image if undefined
+          image={details.solution.image || defaultImage}  // Use the imported default image
           listContent={details.solution.list}
           flexDirection="flex-row-reverse"
           title={details.solution.title}
@@ -55,7 +54,7 @@ const ProjectDetailsBody = ({ project }: ProjectDetailsBodyProps) => {
 
         {/* Result Section */}
         <ProjectDetailsItem
-          image={details.result.image || defaultImage} // Use default image if undefined
+          image={details.result.image || defaultImage}  // Use the imported default image
           listContent={details.result.list}
           title={details.result.title}
           text={details.result.text}
