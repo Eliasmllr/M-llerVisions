@@ -13,9 +13,9 @@ const metadata: Metadata = {
 };
 
 const AboutUs = () => {
-  const handleScroll = () => {
-    document.getElementById("target-section").scrollIntoView({ behavior: "smooth" });
-  };
+  // const handleScroll = () => {
+  //   document.getElementById("target-section").scrollIntoView({ behavior: "smooth" });
+  // };
   return (
     <div className="position-relative overflow-hidden ">
       <div className="container">
@@ -23,7 +23,7 @@ const AboutUs = () => {
         <LinkBackHome />
         <div style={{ height: "50px", display: "flex", justifyContent: "center", alignItems: "center" }}>
         <Button
-          onClick={handleScroll}
+          // onClick={handleScroll}
           style={{
             position: "fixed",
             bottom: "20px",
