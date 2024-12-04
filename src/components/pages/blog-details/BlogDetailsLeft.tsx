@@ -2,31 +2,24 @@ import quoteImage from "@/../public/image/quote-down.png";
 import Image from "next/image";
 import Link from "next/link";
 
-const BlogDetailsLeft = () => {
+const BlogDetailsLeft = ({ blog }) => {
+  // Check if blog data exists
+  if (!blog) {
+    return <div>Loading...</div>; // Show a loading message or fallback UI
+  }
+
   return (
     <div className="blog-details-container__left">
-      {" "}
       <div className="date-tag">
-        <span className="textL font-thin">December 17,2023</span>{" "}
-        <span className="textL font-thin tag">No-Code</span>
+        <span className="textL font-thin">{blog.date}</span>
+        <span className="textL font-thin tag">{blog.tag}</span>
       </div>
-      <h2 className="heading-2 main-title">
-        Aroha&apos;s Client Journey Chronicles
-      </h2>
-      <p className="textL font-thin main-title-text">
-        Embark a captivating journey through Aroha Agency&apos;s Client
-        Chronicles. Explore firsthand accounts of transformative digital
-        experiences. From initial concepts to triumphant results discover the
-        stories that illuminate our commitment to crafting tailored solutions
-        and fostering lasting partnerships.
-      </p>
+      <h2 className="heading-2 main-title">{blog.title}</h2>
+      <p className="textL font-thin main-title-text">{blog.text}</p>
       <div className="quote-box">
-        {" "}
         <p className="textXL font-thin">
-          Embark on a riveting exploration of Aroha Agency&apos;s Client Journey
-          Chronicles. Navigate through diverse industries and witness the
-          transformative impact of our tailored solutions.
-        </p>{" "}
+          {blog.quote ? blog.quote : "No quote available for this blog."}
+        </p>
         <Image
           src={quoteImage}
           width={60}
@@ -35,28 +28,18 @@ const BlogDetailsLeft = () => {
           className="quote"
         />
       </div>
-      <p className="textL font-thin text-after-quote">
-        These stories unfold the essence of collaborative success, illustrating
-        our commitment to turning visions into digital realities that resonate
-        and endure.
-      </p>
+      <p className="textL font-thin text-after-quote">{blog.quoteText}</p>
       <div className="m-t-60px secondary-blog-details">
         <h3 className="heading-3">Aroha&apos;s Approach to SEO Optimization</h3>
         <p className="textL font-thin secondary-blog-details__text">
           Learn how Aroha Agency navigates the complex world of SEO. We share
-          insights into our enhancing online visibility and ensuring our clients
+          insights into enhancing online visibility and ensuring our clients
           stand out in the digital crowd.
         </p>
         <ol>
-          <li className="textL font-thin">
-            It is a long-established fact that a reader will.
-          </li>
-          <li className="textL font-thin">
-            The standard chunk of Lorem Ipsum used since the 1500s.
-          </li>
-          <li className="textL font-thin">
-            It is a long-established fact that a reader will.
-          </li>
+          <li className="textL font-thin">It is a long-established fact that a reader will.</li>
+          <li className="textL font-thin">The standard chunk of Lorem Ipsum used since the 1500s.</li>
+          <li className="textL font-thin">It is a long-established fact that a reader will.</li>
         </ol>
         <p className="textL font-thin secondary-blog-details__end-text">
           Dive into the world of branding with Aroha Agency. Discover how we
@@ -65,11 +48,13 @@ const BlogDetailsLeft = () => {
         </p>
       </div>
       <div className="m-t-60px blog-detail-tags">
-        <p className="textL tag-heading">Tags:</p>{" "}
+        <p className="textL tag-heading">Tags:</p>
         <div className="all-tags">
-          <Link href={`#`}>Development</Link>
-          <Link href={`#`}>Branding</Link>
-          <Link href={`#`}>UIX/UI</Link>
+          {blog.tags.map((tag, index) => (
+            <Link key={index} href={`#`}>
+              {tag}
+            </Link>
+          ))}
         </div>
       </div>
       <div className="m-t-60px comment-section">

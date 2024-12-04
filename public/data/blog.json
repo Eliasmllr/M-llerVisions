@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "image": "/image/list-blog-2.png",
+    "date": "December 17, 2023",
+    "link": "/blog-details/1",
+    "linkText": "Read Now",
+    "tag": "Article",
+    "text": "Showcase design various print material such as brochures, posters.",
+    "title": "Innovative Approaches in Design",
+    "quote": "Explore innovative design solutions that are transforming industries.",
+    "quoteText": "Discover the future of design that balances creativity and functionality.",
+    "tags": ["Design", "Innovation", "Branding"]
+  },
+  {
+    "id": "2",
+    "image": "/image/list-blog-3.png",
+    "date": "December 17, 2023",
+    "link": "/blog-details/2",
+    "linkText": "Read Now",
+    "tag": "Design",
+    "text": "Exploring modern design techniques for efficient outcomes.",
+    "title": "The Future of UX/UI Design",
+    "quote": "Designing for the user experience is the key to the future of digital products.",
+    "quoteText": "UX/UI design will continue to evolve with technology and user demands.",
+    "tags": ["UX/UI", "Design Trends", "Technology"]
+  },
+  {
+    "id": "3",
+    "image": "/image/list-blog-1.png",
+    "date": "December 17, 2023",
+    "link": "/blog-details/3",
+    "linkText": "Read Now",
+    "tag": "Branding",
+    "text": "Showcase design various print material such as brochures, posters.",
+    "title": "Aroha Innovations in App Development",
+    "quote": "Aroha is changing the game in app development with innovative approaches.",
+    "quoteText": "By focusing on user-centric design, Aroha ensures every app meets client needs.",
+    "tags": ["App Development", "Branding", "Technology"]
+  }
+]

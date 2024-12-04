@@ -1,11 +1,12 @@
 "use client";
-import blogBig from "@/../public/image/big-blog.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import BlogLink from "./BlogLink";
 
-const BlogBig = () => {
+const BlogBig = ({ blog }: { blog: any }) => {
+  if (!blog) return null;
+
   return (
     <div className=" blog-body__up-left">
       <motion.div
@@ -17,30 +18,27 @@ const BlogBig = () => {
       >
         <div className="image-container">
           <Image
-            src={blogBig}
+            src={blog.image}
             width={596}
             height={554}
             alt="Blog image"
             className="img-fluid"
-          />{" "}
+          />
         </div>
         <div className="up-left__content">
           <div className="up-left__content-date">
-            <span className="textL font-thin">December 17,2023</span>{" "}
-            <span className="textL font-thin articles-tag">Articles</span>
+            <span className="textL font-thin">{blog.date}</span>{" "}
+            <span className="textL font-thin articles-tag">{blog.tag}</span>
           </div>
           <div className="up-left__content-title">
-            <Link href={"/blog-details"}>
+            <Link href={blog.link}>
               <h3 className="heading-3 font-semi-bold blog-title">
-                Aroha Agency Portfolio Unveiled
+                {blog.title}
               </h3>
             </Link>
-            <p className="textL font-thin">
-              We delve into the creative decisions that make our websites just
-              functional but visually captivating.
-            </p>
+            <p className="textL font-thin">{blog.text}</p>
           </div>
-          <BlogLink link="/" linkText="Read Now" className="blog-link-big" />
+          <BlogLink link={blog.link} linkText="Read Now" className="blog-link-big" />
         </div>
       </motion.div>
     </div>

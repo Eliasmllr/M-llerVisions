@@ -1,136 +1,51 @@
-"use client";
+"use client"
+import { useState, useEffect } from "react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import sliderBlog1 from "@/../public/image/slider-blog-1.png";
-import sliderBlog2 from "@/../public/image/slider-blog-2.png";
-import sliderBlog3 from "@/../public/image/slider-blog-3.png";
-
 import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
-import { useState } from "react";
 import BlogSliderItem from "./BlogSliderItem";
 
-const blogSlider = [
-  {
-    image: sliderBlog1,
-    date: "December 25,2023",
-    tag: "Articles",
-    title: "Digital Alchemy Aroha's Secrets",
-    text: "Regular analysis and reporting to track performance  and guide future strategies etc.",
-    link: "/",
-  },
-  {
-    image: sliderBlog2,
-    date: "December12,2023",
-    tag: "No-Code",
-    title: "Aroha Unveiled Behind the Pixels",
-    text: "Showcase your video creation and editing skills, including promotional animations.",
-    link: "/",
-  },
-  {
-    image: sliderBlog3,
-    date: "December 17,2023",
-    tag: "Resources",
-    title: "Aroha's Client Journey Chronicles",
-    text: "Display your artistic skills through digital or traditional illustrations and many more.",
-    link: "/",
-  },
-  {
-    image: sliderBlog1,
-    date: "December 25,2023",
-    tag: "News",
-    title: "Digital Alchemy Aroha's Secrets",
-    text: "Regular analysis and reporting to track performance and guide future strategies etc. ",
-    link: "/",
-  },
-  {
-    image: sliderBlog2,
-    date: "December12,2023",
-    tag: "Articles",
-    title: "Aroha Unveiled Behind the Pixels",
-    text: "Showcase your video creation and editing skills, including promotional animations.",
-    link: "/",
-  },
-  {
-    image: sliderBlog2,
-    date: "December12,2023",
-    tag: "Resources",
-    title: "Aroha Unveiled Behind the Pixels",
-    text: "Showcase your video creation and editing skills, including promotional animations.",
-    link: "/",
-  },
-  {
-    image: sliderBlog3,
-    date: "December 17,2023",
-    tag: "Resources",
-    title: "Aroha's Client Journey Chronicles",
-    text: "Display your artistic skills through digital or traditional illustrations and many more.",
-    link: "/",
-  },
-  {
-    image: sliderBlog1,
-    date: "December 25,2023",
-    tag: "Resources",
-    title: "Digital Alchemy Aroha's Secrets",
-    text: "Regular analysis and reporting to track performance and guide future strategies etc.",
-    link: "/",
-  },
-  {
-    image: sliderBlog2,
-    date: "December12,2023",
-    tag: "News",
-    title: "Aroha Unveiled Behind the Pixels",
-    text: "Showcase your video creation and editing skills, including promotional animations.",
-    link: "/",
-  },
-  {
-    image: sliderBlog3,
-    date: "December 17,2023",
-    tag: "News",
-    title: "Aroha's Client Journey Chronicles",
-    text: "Display your artistic skills through digital or traditional illustrations and many more.",
-    link: "/",
-  },
-  {
-    image: sliderBlog1,
-    date: "December 25,2023",
-    tag: "Articles",
-    title: "Digital Alchemy Aroha's Secrets",
-    text: "Regular analysis and reporting to track performance and guide future strategies etc.",
-    link: "/",
-  },
-  {
-    image: sliderBlog2,
-    date: "December12,2023",
-    tag: "Articles",
-    title: "Aroha Unveiled Behind the Pixels",
-    text: "Showcase your video creation and editing skills, including promotional animations.",
-    link: "/",
-  },
-  {
-    image: sliderBlog3,
-    date: "December 17,2023",
-    tag: "News",
-    title: "Aroha's Client Journey Chronicles",
-    text: "Display your artistic skills through digital or traditional illustrations and many more.",
-    link: "/",
-  },
-];
-
 const BlogSlider = () => {
-  const [filterData, setFilterData] = useState(blogSlider);
-  const [buttonActive, setButtonActive] = useState("");
+  const [blogs, setBlogs] = useState([]);
+  const [filterData, setFilterData] = useState([]);
+  const [buttonActive, setButtonActive] = useState("all");
+  const [loading, setLoading] = useState(true);
 
+  // Fetch the blog data
+  useEffect(() => {
+    fetch("/data/blog.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setBlogs(data);
+        setFilterData(data); // Initially show all blog data
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching blog data:", error);
+        setLoading(false);
+      });
+  }, []);
+
+  // Filter the data based on category
   const handleFilterData = (e: React.MouseEvent<HTMLButtonElement>) => {
     const buttonText = e.target as HTMLButtonElement;
-    setButtonActive(buttonText.innerText.toLocaleLowerCase());
-    const filterItems = blogSlider.filter(
-      (item) =>
-        item.tag.toLocaleLowerCase() ===
-        buttonText.innerText.toLocaleLowerCase()
-    );
-    setFilterData(filterItems);
+    const filterCategory = buttonText.innerText.toLocaleLowerCase();
+    setButtonActive(filterCategory);
+
+    if (filterCategory === "all") {
+      setFilterData(blogs); // Show all blogs
+    } else {
+      const filteredItems = blogs.filter(
+        (item) => item.tag.toLocaleLowerCase() === filterCategory
+      );
+      setFilterData(filteredItems); // Show filtered data
+    }
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="m-t-60px blog-body__down">
@@ -138,30 +53,32 @@ const BlogSlider = () => {
       <div className="tab-area">
         <div className="tab-area__buttons">
           <button
-            className={`textM tab-area__buttons-button ${
-              buttonActive == "Resources".toLocaleLowerCase()
-                ? "tab-active"
-                : ""
-            }`}
+            className={`textM tab-area__buttons-button ${buttonActive === "Design" ? "tab-active" : ""
+              }`}
             onClick={(e) => handleFilterData(e)}
           >
-            Resources
+            Design
           </button>
           <button
-            className={`textM tab-area__buttons-button ${
-              buttonActive == "Articles".toLocaleLowerCase() ? "tab-active" : ""
-            }`}
+            className={`textM tab-area__buttons-button ${buttonActive === "article" ? "tab-active" : ""
+              }`}
             onClick={(e) => handleFilterData(e)}
           >
-            Articles
+            Article
           </button>
           <button
-            className={`textM tab-area__buttons-button ${
-              buttonActive == "News".toLocaleLowerCase() ? "tab-active" : ""
-            }`}
+            className={`textM tab-area__buttons-button ${buttonActive === "Branding" ? "tab-active" : ""
+              }`}
             onClick={(e) => handleFilterData(e)}
           >
-            News
+            Branding
+          </button>
+          <button
+            className={`textM tab-area__buttons-button ${buttonActive === "all" ? "tab-active" : ""
+              }`}
+            onClick={(e) => handleFilterData(e)}
+          >
+            All
           </button>
         </div>
         <div className="slider-buttons">
@@ -174,7 +91,7 @@ const BlogSlider = () => {
         </div>
       </div>
 
-      {/* slider area */}
+      {/* Slider area */}
       <div className="m-t-40px">
         <Swiper
           slidesPerView={1}
@@ -205,9 +122,16 @@ const BlogSlider = () => {
             },
           }}
         >
-          {filterData.map(({ ...props }, index) => (
+          {filterData.map(({ image, date, linkText, tag, text, title }, index) => (
             <SwiperSlide key={`blog-slider${index}`}>
-              <BlogSliderItem {...props} />
+              <BlogSliderItem
+                image={image}
+                date={date}
+                linkText={linkText}
+                tag={tag}
+                text={text}
+                title={title}
+              />
             </SwiperSlide>
           ))}
         </Swiper>

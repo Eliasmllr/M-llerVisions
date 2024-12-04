@@ -1,19 +1,18 @@
-"use client";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import BlogLink from "./BlogLink";
 
 type Props = {
+  id: string;
   image: StaticImageData;
   date: string;
   tag: string;
   title: string;
   text: string;
-  link: string;
+  linkText: string;
 };
 
-const BlogSliderItem = ({ image, date, tag, title, text, link }: Props) => {
+const BlogSliderItem = ({ id, image, date, tag, title, text, linkText }: Props) => {
   return (
     <motion.div
       initial={{ borderRadius: 20, opacity: 0, y: -50, scale: 0.5 }}
@@ -29,24 +28,22 @@ const BlogSliderItem = ({ image, date, tag, title, text, link }: Props) => {
           height={230}
           alt="Blog image"
           className="img-fluid"
-        />{" "}
+        />
       </div>
       <div className="blog-slider__content">
         <div className="blog-slider__content-date">
-          <span className="textS font-thin">{date}</span>{" "}
+          <span className="textS font-thin">{date}</span>
           <span className="textS font-thin articles-tag">{tag}</span>
         </div>
         <div className="blog-slider__content-title">
-          <Link href={`/blog-details`}>
+          <Link href={`/blog-details/${id}`}>  {/* Use the blog ID in the URL */}
             <h3 className="heading-4 font-medium list-blog-title">{title}</h3>
           </Link>
           <p className="textM font-thin">{text}</p>
         </div>
-        <BlogLink
-          link={`/blog-details`}
-          linkText="Read Now"
-          className="slider-link"
-        />
+        <Link href={`/blog-details/${id}`} className="slider-link">
+          {linkText}
+        </Link>
       </div>
     </motion.div>
   );
