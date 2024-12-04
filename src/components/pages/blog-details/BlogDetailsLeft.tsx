@@ -1,8 +1,14 @@
+// BlogDetailsLeft.tsx
+import { Blog } from "@/types/blog";  // Import the Blog interface
 import quoteImage from "@/../public/image/quote-down.png";
 import Image from "next/image";
 import Link from "next/link";
 
-const BlogDetailsLeft = ({ blog }) => {
+interface BlogDetailsLeftProps {
+  blog: Blog;  // Type the blog prop as Blog
+}
+
+const BlogDetailsLeft = ({ blog }: BlogDetailsLeftProps) => {
   // Check if blog data exists
   if (!blog) {
     return <div>Loading...</div>; // Show a loading message or fallback UI

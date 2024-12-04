@@ -1,3 +1,5 @@
+// BlogDetailsBody.tsx
+import { Blog } from "@/types/blog";  // Import the Blog interface
 import bannerImage from "@/../public/image/blog-details-banner.png";
 import Image from "next/image";
 import BlogDetailsLeft from "./BlogDetailsLeft";
@@ -6,7 +8,8 @@ import PopularTags from "./PopularTags";
 import RecentPosts from "./RecentPosts";
 import SearchBox from "./SearchBox";
 
-const BlogDetailsBody = ({ blog }) => { // Receive the blog prop
+// Update the component to type the prop as Blog
+const BlogDetailsBody = ({ blog }: { blog: Blog }) => {
   return (
     <div className="mt-xxl-10 mt-xl-8 mt-6 position-relative z-2">
       <div className="blog-detail-style blog-details-body">
@@ -18,7 +21,7 @@ const BlogDetailsBody = ({ blog }) => { // Receive the blog prop
           className="img-fluid banner-image"
         />
         <div className="blog-details-container">
-          <BlogDetailsLeft blog={blog} /> {/* Pass the blog prop to BlogDetailsLeft */}
+          <BlogDetailsLeft blog={blog} />
 
           <div className="blog-details-container__right">
             <SearchBox />
