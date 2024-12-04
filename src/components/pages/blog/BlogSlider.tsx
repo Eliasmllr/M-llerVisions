@@ -2,13 +2,13 @@
 import { useState, useEffect } from "react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
 import BlogSliderItem from "./BlogSliderItem";
+import { Blog } from "@/types/blog";  // Import the Blog type
 
 const BlogSlider = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [filterData, setFilterData] = useState([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);  // Explicitly type the state as an array of Blog
+  const [filterData, setFilterData] = useState<Blog[]>([]);  // Explicitly type the filtered data as an array of Blog
   const [buttonActive, setButtonActive] = useState("all");
   const [loading, setLoading] = useState(true);
 
@@ -53,29 +53,25 @@ const BlogSlider = () => {
       <div className="tab-area">
         <div className="tab-area__buttons">
           <button
-            className={`textM tab-area__buttons-button ${buttonActive === "Design" ? "tab-active" : ""
-              }`}
+            className={`textM tab-area__buttons-button ${buttonActive === "Design" ? "tab-active" : ""}`}
             onClick={(e) => handleFilterData(e)}
           >
             Design
           </button>
           <button
-            className={`textM tab-area__buttons-button ${buttonActive === "article" ? "tab-active" : ""
-              }`}
+            className={`textM tab-area__buttons-button ${buttonActive === "article" ? "tab-active" : ""}`}
             onClick={(e) => handleFilterData(e)}
           >
             Article
           </button>
           <button
-            className={`textM tab-area__buttons-button ${buttonActive === "Branding" ? "tab-active" : ""
-              }`}
+            className={`textM tab-area__buttons-button ${buttonActive === "Branding" ? "tab-active" : ""}`}
             onClick={(e) => handleFilterData(e)}
           >
             Branding
           </button>
           <button
-            className={`textM tab-area__buttons-button ${buttonActive === "all" ? "tab-active" : ""
-              }`}
+            className={`textM tab-area__buttons-button ${buttonActive === "all" ? "tab-active" : ""}`}
             onClick={(e) => handleFilterData(e)}
           >
             All
@@ -122,9 +118,10 @@ const BlogSlider = () => {
             },
           }}
         >
-          {filterData.map(({ image, date, linkText, tag, text, title }, index) => (
+          {filterData.map(({ image, date, linkText, tag, text, title, id }, index) => (
             <SwiperSlide key={`blog-slider${index}`}>
               <BlogSliderItem
+                id={id}
                 image={image}
                 date={date}
                 linkText={linkText}

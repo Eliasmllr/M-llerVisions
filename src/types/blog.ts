@@ -6,5 +6,8 @@ export interface Blog {
     quote?: string;
     quoteText?: string;
     tags: string[];
+    image?: any;
+    linkText?: any;
+    id?: any;
   }
   

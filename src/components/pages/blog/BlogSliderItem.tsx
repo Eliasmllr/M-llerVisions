@@ -3,13 +3,13 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 type Props = {
-  id: string;
-  image: StaticImageData;
-  date: string;
-  tag: string;
+  image: string;  // Now accepting a URL string
   title: string;
   text: string;
+  tag: string;
+  date: string;
   linkText: string;
+  id: string;
 };
 
 const BlogSliderItem = ({ id, image, date, tag, title, text, linkText }: Props) => {
