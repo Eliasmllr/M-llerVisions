@@ -18,7 +18,7 @@ const Footer = () => {
         </p>
       </div>
       <ul className="landing-footer__menu">
-        <li className="landing-footer__menu-item">
+        {/* <li className="landing-footer__menu-item">
           <Link className="textL" href={`/`}>
             Startseite
           </Link>
@@ -32,12 +32,12 @@ const Footer = () => {
           <Link className="textL" href={`/all-projects`}>
             Projekte
           </Link>
-        </li>
+        </li>*/}
         <li className="landing-footer__menu-item">
-          <Link className="textL" href={`/contact`}>
-            Kontakte
+          <Link className="textL" href={`/agbs`}>
+          AGBs
           </Link>
-        </li>
+          </li> 
         <li className="landing-footer__menu-item">
           <Link className="textL" href={`/datenschutz`}>
           Datenschutz
