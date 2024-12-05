@@ -18,7 +18,7 @@ const AboutUs = () => {
       <div className="container">
         <Navbar />
         <LinkBackHome />
-        <div className='impressum-content'>
+        <div className='agbs-content'>
           <h1>AGBs</h1>
         </div>
         <Footer />
