@@ -33,16 +33,17 @@ const Footer = () => {
             Projekte
           </Link>
         </li>*/}
-        <li className="landing-footer__menu-item">
-          <Link className="textL" href={`/agbs`}>
-          AGBs
-          </Link>
-          </li> 
+     
         <li className="landing-footer__menu-item">
           <Link className="textL" href={`/datenschutz`}>
           Datenschutz
           </Link>
         </li>
+        <li className="landing-footer__menu-item">
+          <Link className="textL" href={`/agbs`}>
+          AGBs
+          </Link>
+          </li> 
         <li className="landing-footer__menu-item">
           <Link className="textL" href={`/impressum`}>
           Impressum
